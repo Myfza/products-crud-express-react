@@ -1,6 +1,6 @@
 # Products Full-Stack App (Express + React Vite)
 
-Aplikasi CRUD sederhana untuk data "products" dengan backend Node.js + Express.js dan frontend React.js (Vite). Siap dijalankan secara lokal.
+A simple CRUD application for "products" data with a Node.js + Express.js backend and a React.js (Vite) frontend. Ready to run locally.
 
 ## Spesifikasi
 
