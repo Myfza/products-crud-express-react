@@ -2,29 +2,28 @@
 
 A simple CRUD application for "products" data with a Node.js + Express.js backend and a React.js (Vite) frontend. Ready to run locally.
 
-## Spesifikasi
+## Specifications
 
 - Backend:
-  - REST API CRUD `/api/products` (GET, POST, PUT, DELETE)
-  - Mock database (array in-memory)
-  - Validasi input dan error handling
-  - CORS untuk origin `http://localhost:5173`
-  - Port: 5000
+- REST API CRUD `/api/products` (GET, POST, PUT, DELETE)
+- Mock database (in-memory array)
+- Input validation and error handling
+- CORS for origin `http://localhost:5173`
+- Port: 5000
 
 - Frontend:
-  - Menampilkan daftar produk
-  - Form tambah produk
-  - Edit dan hapus per item
-  - Styling: CSS Modules
-  - Menggunakan `fetch` untuk API
-  - Port: 5173
-
+- Display product list
+- Add product form
+- Edit and delete per item
+- Styling: CSS Modules
+- Using `fetch` for API
+- Port: 5173
 
 ---
 
-## Cara menjalankan
+## How to run
 
-1) Jalankan Backend (port 5000)
+1) Run Backend (port 5000)
 
 ```bash
 cd server
@@ -34,44 +33,41 @@ npm start
 cd ../client
 npm install
 npm run dev
-Kunjungi: http://localhost:5173
-
+Visit: http://localhost:5173
 
 ---
 
-## Penjelasan singkat cara kerja tiap bagian
+## Brief explanation of how each part works
 
 ### Backend (server)
 - server.js
-  - Menginisialisasi Express, mengaktifkan CORS untuk origin frontend, parsing JSON, dan mengikat router /api/products.
-  - Menyediakan handler 404 untuk route yang tidak dikenal dan middleware error handler global.
-  - Menjalankan server pada port 5000.
+- Initializes Express, enables CORS for the origin frontend, parses JSON, and binds the /api/products router.
+- Provides a 404 handler for unknown routes and a global error handler middleware.
+- Runs the server on port 5000.
 
 - routes/products.js
-  - Menyimpan data produk dalam array in-memory, dengan id auto-increment.
-  - Menyediakan endpoint:
-    - GET /api/products: ambil semua produk.
-    - GET /api/products/:id: ambil produk berdasarkan id.
-    - POST /api/products: validasi payload lalu buat produk baru.
-    - PUT /api/products/:id: validasi payload lalu update produk.
-    - DELETE /api/products/:id: hapus produk.
-  - Menangani error umum: 400 (id invalid / payload invalid) dan 404 (produk tidak ditemukan).
+- Stores product data in an in-memory array with auto-incrementing IDs.
+- Provides endpoints:
+- GET /api/products: retrieves all products.
+- GET /api/products/:id: retrieves a product by ID.
+- POST /api/products: validates the payload and then creates a new product.
+- PUT /api/products/:id: validates the payload and then updates the product.
+- DELETE /api/products/:id: deletes the product.
+- Handles common errors: 400 (invalid ID / invalid payload) and 404 (product not found).
 
 ### Frontend (client)
-- Vite config pada port 5173, sehingga URL frontend adalah http://localhost:5173.
+- Vite configures on port 5173, so the frontend URL is http://localhost:5173.
 - App.jsx
-  - Mengelola state produk, memuat data dari backend saat mount, serta menyediakan handler add/update/delete.
-  - Menampilkan error global jika request gagal.
+- Manages product state, loads data from the backend on mount, and provides add/update/delete handlers.
+- Displays a global error if the request fails.
 - ProductForm.jsx
-  - Form tambah produk baru dengan validasi sisi-klien sederhana.
+- Add new product form with simple client-side validation.
 - ProductList.jsx
-  - Menampilkan kumpulan ProductItem dalam grid responsif.
+- Displays a collection of ProductItems in a responsive grid.
 - ProductItem.jsx
-  - Menampilkan satu produk, menyediakan mode edit inline dan tombol hapus.
+- Displays a single product, provides an inline edit mode and a delete button.
 - CSS Modules
-  - Styling sederhana namun rapi, terisolasi per komponen untuk menghindari konflik kelas.
-
-Selamat mencoba, M. Kalau ingin menambahkan pencarian, pagination, atau penyimpanan ke database nyata (mis. PostgreSQL/SQLite), bilang ya—kita bisa kembangkan dari fondasi ini.
+- Simple yet clean styling, isolated per component to avoid class conflicts.
 
 ## 📬 Contact
 
